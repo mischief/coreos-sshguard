@@ -1,7 +1,5 @@
 FROM alpine:3.2
-RUN apk add --update iptables
-RUN apk add ip6tables
-RUN apk add sshguard
-RUN rm -rf /var/cache/apk/*
+MAINTAINER Nick Owens <mischief@offblast.org> (@mischief)
+RUN apk add --update iptables ip6tables sshguard && rm -rf /var/cache/apk/*
 ENTRYPOINT ["/usr/sbin/sshguard"]
 
